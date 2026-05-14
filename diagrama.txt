@@ -1,0 +1,40 @@
+src/
+├── gatos/
+│   ├── dto/
+│   │   ├── create-gato.dto.ts
+│   │   └── update-gato.dto.ts
+│   ├── schema/            ← ojo, renombra a schemas (plural)
+│   ├── gatos.controller.ts
+│   ├── gatos.module.ts
+│   └── gatos.service.ts
+├── imagenes/
+│   ├── dto/
+│   │   └── favorito.dto.ts
+│   ├── imagenes.controller.ts
+│   ├── imagenes.module.ts
+│   └── imagenes.service.ts
+├── app.module.ts          ← dejar
+└── main.ts                ← dejar
+
+.env
+.gitignore
+nest-cli.json
+package.json
+tsconfig.json
+
+
+PRUEBA POSTMAN
+
+
+GET  http://localhost:3000/imagenes
+GET  http://localhost:3000/imagenes/favoritos
+POST http://localhost:3000/imagenes/favoritos  → body: { "image_id": "abc123" }
+
+GET    http://localhost:3000/gatos
+POST   http://localhost:3000/gatos
+GET    http://localhost:3000/gatos/:id
+PUT    http://localhost:3000/gatos/:id
+DELETE http://localhost:3000/gatos/:id
+
+
+DKJEilEF5NjZ56vv
