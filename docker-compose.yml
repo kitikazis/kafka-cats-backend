@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:8
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  backend:
+    container_name: cats-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/catsdb
+      - CAT_API_KEY=f221c99b-304d-4404-b111-cbd3ddccf31a
+      - CAT_API_URL=https://api.thecatapi.com/v1
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb_data:
